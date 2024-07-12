@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+$main: #5a189a;
+$main-dark: #3c096c;
+$main-darker: #240046;
+$main-light: #7b2cbf;
+$main-lighter: #9d4edd;
+$alt: #ff8500;
+$alt-light: #ff9e00;
+$alt-dark: #ff6d00;
+$white: #f1d6ff;
+$transition: .2s;
+
+body {
+  font-family: monospace;
+  background-color: $main-darker;
+  color: $white;
+}
+
+@mixin btn($color) {
+  background-color: $color !important;
+  color: if(lightness($color) > 50%, black, white) !important;
+  transition: $transition;
+  &:hover {
+    background-color: darken($color, 10%) !important;
+  }
+  &:active {
+    border-color: white !important;
+  }
+}
+
+$colors: (
+  "main": $main,
+  "main-dark": $main-dark,
+  "main-darker": $main-darker,
+  "main-light": $main-light,
+  "main-lighter": $main-lighter,
+  "alt": $alt,
+  "alt-light": $alt-light,
+  "alt-dark": $alt-dark,
+  "white": $white,
+);
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    @include btn($color);
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.transition {
+  transition: $transition;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn {
+  transition: $transition;
+  &:active {
+    border-color: $main-darker !important;
+  }
+}

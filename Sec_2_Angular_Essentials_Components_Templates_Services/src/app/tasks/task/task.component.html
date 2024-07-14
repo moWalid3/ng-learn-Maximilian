@@ -1,0 +1,8 @@
+<app-card>
+  <article class=" bg-main-lighter p-3 rounded-1 me-2">
+    <h3 class="mb-1 fw-bold">{{task().title}}</h3>
+    <span class="text-main-darker fw-bold">{{task().dueDate | date:'fullDate'}}</span>
+    <p>{{task().summary}}</p>
+    <button (click)="onCompletedTask()" class="btn btn-alt-dark d-block ms-auto">Complete</button>
+  </article>
+</app-card>

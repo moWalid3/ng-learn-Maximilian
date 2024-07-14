@@ -16,6 +16,7 @@ body {
   font-family: monospace;
   background-color: $main-darker;
   color: $white;
+  letter-spacing: -.5px;
 }
 
 @mixin btn($color) {
@@ -68,5 +69,14 @@ $colors: (
   transition: $transition;
   &:active {
     border-color: $main-darker !important;
+  }
+}
+
+.active {
+  transform: scale(.93);
+  background-color: darken($alt-dark, 10%) !important;
+  border-color: $main-darker !important;
+  &:hover {
+    background-color: darken($alt-dark, 10%) !important;
   }
 }

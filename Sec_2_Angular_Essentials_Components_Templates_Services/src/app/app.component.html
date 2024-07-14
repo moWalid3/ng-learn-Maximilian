@@ -1,0 +1,23 @@
+<section class="mx-auto">
+  <app-header />
+
+  <main class="d-flex gap-4">
+
+    <ul class="list-unstyled mb-0">
+      @for(user of users; track user.id) {
+      <li>
+        <app-user (select)="onSelect($event)" [user]="user" [selected]="selectedId === user.id" />
+      </li>
+      }
+    </ul>
+
+    <div class="flex-grow-1">
+      @if (userSelected) {
+      <app-tasks [userName]="userSelected.name" [userId]="userSelected.id" />
+      } @else {
+      <h2>Select user to show their tasks!</h2>
+      }
+    </div>
+
+  </main>
+</section>

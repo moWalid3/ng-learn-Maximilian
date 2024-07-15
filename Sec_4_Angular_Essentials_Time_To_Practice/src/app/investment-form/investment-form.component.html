@@ -1,0 +1,24 @@
+<section class="mx-auto py-4 px-3 mb-5">
+  <form (ngSubmit)="onSubmit()" class="justify-content-around row gap-4 rounded-3"> 
+
+    <p class="col-5">
+      <label for="initialInvestment" class="form-label">Initial Investment:</label>
+      <input [(ngModel)]="investment().initialInvestment" type="number" class="form-control" id="initialInvestment" name="initialInvestment">
+    </p>
+    <p class="col-5">
+      <label for="annualInvestment" class="form-label">Annual Investment:</label>
+      <input [(ngModel)]="investment().annualInvestment" type="number" class="form-control" id="annualInvestment" name="annualInvestment">
+    </p>
+    <p class="col-5">
+      <label for="expectedReturn" class="form-label">Expected Return:</label>
+      <input [(ngModel)]="investment().expectedReturn" type="number" class="form-control" id="expectedReturn" name="expectedReturn">
+    </p>
+    <p class="col-5">
+      <label for="duration" class="form-label">Duration:</label>
+      <input [(ngModel)]="investment().duration" type="number" class="form-control" id="duration" name="duration">
+    </p>
+
+    <button type="submit" class="btn btn-main-light w-75">CALCULATE</button>
+  </form>
+
+</section>

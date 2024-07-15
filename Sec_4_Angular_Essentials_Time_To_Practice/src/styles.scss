@@ -1,0 +1,56 @@
+
+@import 'bootstrap/scss/bootstrap';
+
+$main: #009688;
+$main-light: #9fffcb;
+$transition: .2s;
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #04100e;
+  color: #e9f6f4;
+}
+
+@mixin btn($color) {
+  background-color: $color !important;
+  color: if(lightness($color) > 50%, black, white) !important;
+  transition: $transition;
+  &:hover {
+    background-color: darken($color, 10%) !important;
+  }
+  &:active {
+    border-color: white !important;
+  }
+}
+
+$colors: (
+  "main": $main,
+  "main-light": $main-light,
+);
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    @include btn($color);
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.transition {
+  transition: $transition;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn {
+  transition: $transition;
+}
+

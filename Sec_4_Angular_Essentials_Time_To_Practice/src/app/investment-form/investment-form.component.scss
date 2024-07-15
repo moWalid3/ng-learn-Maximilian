@@ -1,0 +1,17 @@
+section {
+  width: 90%;
+  max-width: 35rem;
+  background-image: linear-gradient(
+    to bottom,
+    #009688,
+    #008f78,
+    #008768,
+    #0b7f58,
+    #167747
+  );
+  .form-control {
+    background-color: transparent !important;
+    color: white;
+    caret-color: white;
+  }
+}

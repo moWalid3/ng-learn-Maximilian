@@ -1,0 +1,26 @@
+@if (resultsData().length === 0) {
+<h4 class="text-center">Please enter some values and press "Calculate".</h4>
+} @else {
+<section class="table-responsive mx-auto">
+  <table class="table table-responsive-sm table-dark text-center table-striped">
+    <thead class="table-success">
+      <tr>
+        @for (title of ['Year', 'Investment Value', 'Interest (year)', 'TotalInterest', 'Invested Capital']; track $index) {
+        <th>{{ title }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (result of resultsData(); track result.year) {
+      <tr>
+        <td>{{ result.year }}</td>
+        <td>{{ result.valueEndOfYear | currency }}</td>
+        <td>{{ result.interest | currency }}</td>
+        <td>{{ result.totalInterest | currency }}</td>
+        <td>{{ result.totalAmountInvested | currency }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>
+}

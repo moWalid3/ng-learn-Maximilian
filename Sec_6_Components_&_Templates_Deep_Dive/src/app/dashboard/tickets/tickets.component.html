@@ -1,0 +1,18 @@
+<app-dashboard-item [imgPath]="'list.png'" [title]="'Support Tickets'">
+
+  <div>
+    <ul>
+      @for (ticket of tickets; track ticket.id) {
+        <!-- {{ $first $last $index $count $even $odd }} -->
+
+        <app-ticket [ticket]="ticket" (close)="onCloseTicket(ticket.id)" />
+
+      } @empty {
+        <p>No tickets available.</p>
+      }
+    </ul>
+
+    <app-new-ticket (add)="onAdd($event)"/>
+  </div>
+
+</app-dashboard-item>

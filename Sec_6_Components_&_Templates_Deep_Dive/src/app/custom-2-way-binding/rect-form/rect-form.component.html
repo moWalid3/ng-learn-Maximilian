@@ -1,0 +1,17 @@
+<div class="ms-5 border p-3 border-black w-25 text-center">
+  <form class=" d-flex gap-5">
+    <p>
+      <label>Height</label>
+      <input type="number" [(ngModel)]="rectSize.height" class="form-control" name="height" />
+    </p>
+    
+    <p>
+      <label>Width</label>
+      <input type="number" [(ngModel)]="rectSize.width" class="form-control" name="width" />
+    </p>
+    
+  </form>
+  
+  <app-rect [(size)]="rectSize" />
+
+</div>

@@ -1,0 +1,30 @@
+<article class="bg-dark-subtle rounded-2 mb-3">
+
+  <h3 class="p-2">
+    <div class="badge d-inline-block rounded-circle"
+      [class]="{
+        'bg-alt': ticket().status === 'open',
+        'bg-success': ticket().status === 'closed',
+      }"
+    >&#160;</div>
+    <button (click)="onToggleDetails()" class="btn d-inline-flex w-75 justify-content-between border-0">
+      <span>{{ ticket().title }}</span>
+      <span>
+        @if (detailsVisible()) {
+          ⇓
+        } @else {
+          ⇑
+        }
+      </span>
+    </button>
+
+  </h3>
+
+  @if (detailsVisible()) {
+    <p class="ps-3">{{ ticket().request }}</p>
+
+    @if (ticket().status === 'open') {
+      <button (click)="onMarkAsCompleted()" class="btn btn-outline-danger m-2">Mark as completed</button>
+    }
+  }
+</article>

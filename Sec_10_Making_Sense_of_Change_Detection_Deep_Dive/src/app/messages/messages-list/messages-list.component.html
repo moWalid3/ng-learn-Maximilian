@@ -1,0 +1,11 @@
+<ul>
+  <!-- this async pipe => transform Observable by make subscribe automatic and get the value
+    and it do trigger change detection also when a data changing without ChangeDetectorRef
+  -->
+  <!-- @for (message of messages$ | async; track message) { -->
+  @for (message of messages() ; track message) {
+    <li>{{ message }}</li>
+  }
+</ul>
+
+<p class="debug-output">{{ debugOutput }}</p>

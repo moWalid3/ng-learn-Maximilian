@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Login</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label>Email</label>
+      <input name="email" type="email" formControlName="email" />
+    </div>
+
+    <div class="control no-margin">
+      <label>Password</label>
+      <input name="password" type="password" formControlName="password" />
+    </div>
+
+    <button class="button">Login</button>
+  </div>
+
+  @if (emailIsInvalid) {
+    <p class="control-error">Email is invalid!</p>
+  }
+
+  @if (passwordIsInvalid) {
+    <p class="control-error">Password is invalid!, enter at least 3 char and contain a question mark</p>
+  }
+
+</form>

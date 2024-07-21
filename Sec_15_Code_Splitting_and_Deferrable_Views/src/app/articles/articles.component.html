@@ -1,0 +1,15 @@
+<div class="row g-3">
+  @for (article of articles(); track article.source.id) {
+    <div class="col-3">
+      <div class="border bg-light position-relative">
+        <div class="badge position-absolute end-0 top-0 m-3 text-bg-danger">{{article.author.split(" ").slice(0, 2).join(" ")}}</div>
+        <img [src]="article.urlToImage" [alt]="article.title" class="img-fluid img-thumbnail border-0">
+        <div class="p-3">
+          <h6 class="text-muted">{{ article.title }}</h6>
+          <a [href]="article.url" target="_blank" class="text-danger">Read More</a>
+          <small class="badge text-bg-info ms-5">{{ article.publishedAt | date }}</small>
+        </div>
+      </div>
+    </div>
+  }
+</div>

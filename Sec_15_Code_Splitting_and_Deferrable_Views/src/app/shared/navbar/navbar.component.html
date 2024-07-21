@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-success-subtle">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">LazyLoading</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="bg-dark rounded-2 text-white" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/articles" routerLinkActive="bg-dark rounded-2 text-white">Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/deferrable" routerLinkActive="bg-dark rounded-2 text-white">Deferrable</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

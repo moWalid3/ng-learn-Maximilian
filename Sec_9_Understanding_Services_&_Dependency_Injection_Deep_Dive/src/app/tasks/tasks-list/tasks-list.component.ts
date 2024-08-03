@@ -30,12 +30,5 @@ export class TasksListComponent {
 
   onChangeTasksFilter(filter: string) {
     this.selectedFilter.set(filter);
-    // this.selectedFilter.set(filter.toUpperCase().replace('-', '_'));
-    // let status = filter.toUpperCase().replace('-', '_') as TaskStatus;
-
-    // if(filter === 'all')
-    //   this.tasks = this.tasksService.allTasks;
-    // else
-    // this.tasks = this.tasksService.getTasksByStatus(status);
   }
 }

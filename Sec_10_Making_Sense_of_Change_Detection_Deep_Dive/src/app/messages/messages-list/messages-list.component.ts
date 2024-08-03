@@ -9,7 +9,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './messages-list.component.scss',
   imports: [AsyncPipe],
   /*
-    this make zone.js to don't check this component and it's siblings without there are any inputs or events in these
+    this make zone.js to don't check this component and it's siblings without there are any inputs or events changes in these
     so if this component has an input or event it will be changing if this input or this event change but if not changing it will not checking it by zone.js
     so if there is not any inputs or events here => zone.js don't work here else you use signal
     so if you don't use signal and it's not have an input or event and you need the data here

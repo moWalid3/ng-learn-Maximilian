@@ -1,0 +1,8 @@
+<h1 style="color: hotpink; margin: 3rem;">Welcome To Service Workers!</h1>
+
+@for (post of posts(); track $index) {
+  <app-post
+    [content]="post.body"
+    [title]="post.title"
+  ></app-post>
+}

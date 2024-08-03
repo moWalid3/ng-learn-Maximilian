@@ -15,7 +15,7 @@ function mustContainQuestionMark(control: AbstractControl) {
 }
 
 // this is a custom asyncValidators ==> an dummy example
-// but you can use it with with Http or async status
+// but you can use it with Http or async status
 // it must return observable
 function emailIsUnique(control: AbstractControl) {
   if (control.value !== 'test@example.com') {

@@ -16,8 +16,7 @@ export class TicketsComponent {
 
   onAdd(ticketData: {title: string, request: string}) {
     const ticket: Ticket = {
-      title: ticketData.title,
-      request: ticketData.request,
+      ...ticketData,
       id: Math.random().toString(),
       status: 'open'
     } 

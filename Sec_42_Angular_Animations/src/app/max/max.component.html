@@ -1,0 +1,17 @@
+<button (click)="onAnimate()">Animate</button>
+<button (click)="onShrink()">Shrink</button>
+
+<div [@moving]="state"></div>
+
+<br>
+
+<input #inp type="text">
+<button (click)="onAdd(inp.value)">Add</button>
+@for (item of items; track $index) {
+  <p @anything (click)="onDelete(item)">{{ item }}</p>
+}
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>

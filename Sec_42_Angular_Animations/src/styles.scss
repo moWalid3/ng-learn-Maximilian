@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  overflow: hidden;
+}
+
+button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+  margin: .5rem;
+  border-radius: 3px;
+  &:hover {
+    background-color: rgb(27, 125, 223);
+  }
+}

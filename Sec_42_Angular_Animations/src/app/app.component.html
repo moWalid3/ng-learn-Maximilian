@@ -1,0 +1,11 @@
+<nav>
+  <button routerLink='/ara'>Ara</button>
+  <button routerLink='/max'>Max</button>
+  <button routerLink='/doc'>Doc</button>
+</nav>
+
+<br><br><br>
+
+<div [@routeAnimations]="getRouteAnimationData()">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$green: #45FFCA;
+$yellow: #FEFFAC;
+$pink: #FFB6D9;
+$purple: #D67BFF;
+$transition: .2s;
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #333;
+}
+
+@mixin btn($color) {
+  background-color: $color !important;
+  color: if(lightness($color) > 50%, black, white) !important;
+  transition: $transition;
+  &:hover{
+    background-color: darken($color, 10%) !important;
+  }
+  &:active {
+    border-color: white !important;
+  }
+}
+
+$colors: (
+  'pink': $pink,
+  'green': $green,
+  'purple': $purple,
+  'yellow': $yellow
+);
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    @include btn($color);
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.transition {
+  transition: $transition;
+}
+
+.btn {
+  transition: $transition;
+}
